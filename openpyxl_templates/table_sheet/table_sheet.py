@@ -140,6 +140,7 @@ class TableSheet(TemplatedWorksheet):
 
         self.columns = []
         self._column_headers_counter = Counter()
+        self.row_styles = []
         for object_attribute, column in self._items.items():
             self.add_column(column, object_attribute=object_attribute)
         self.row_styles = row_styles or self.row_styles or []
