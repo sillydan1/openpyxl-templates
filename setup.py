@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 import io
-
 from setuptools import setup, find_packages
-import sys
-
 # install_requires = []
 # if (sys.version_info[0], sys.version_info[1]) < (3, 2):
 #     install_requires.append('futures>=2.1.3')
@@ -17,14 +14,14 @@ import sys
 # twine upload dist/openpyxl_templates-X.X.X-py2.py3-none-any.whl
 
 setup(
-    name='openpyxl-templates',
-    version='0.2.2',
+    name='openpyxl-templates310',
+    version='0.2.6',
     description='Openpyxl-templates is an extention to openpyxl which simplifies reading '
                 'and writing excelfiles by formalizing their structure into templates.',
     long_description=io.open('README.rst', encoding='utf-8').read(),
     #     io.open('HISTORY.rst', encoding='utf-8').read(),
     author='Sverker Sjöberg',
-    url='https://github.com/SverkerSbrg/openpyxl-templates',
+    url='https://github.com/sillydan1/openpyxl-templates',
     license='MIT',
     packages=find_packages(exclude=['tests', 'docs']),
     zip_safe=False,
@@ -43,6 +40,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: Implementation :: PyPy',
     ]
 )
