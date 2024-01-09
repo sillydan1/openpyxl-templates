@@ -23,7 +23,6 @@ class MultipleActiveSheets(OpenpyxlTemplateException):
 
 class TemplatedWorkbook(with_metaclass(OrderedType)):  # type: ignore
     item_class = TemplatedWorksheet
-    templated_sheets: list = []
     template_styles: StyleSet
     timestamp: bool | str = False
     _default_timestamp: str = "%Y%m%d_%H%M%S"
@@ -32,6 +31,7 @@ class TemplatedWorkbook(with_metaclass(OrderedType)):  # type: ignore
 
     def __init__(self, file=None, template_styles=None, timestamp=None, templated_sheets=None, keep_vba=False, data_only=False, keep_links=True):
         super(TemplatedWorkbook, self).__init__()
+        self.templated_sheets: list = []
         self.workbook = load_workbook(
             filename=file,
             data_only=data_only,
