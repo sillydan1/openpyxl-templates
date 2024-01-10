@@ -6,7 +6,7 @@ from openpyxl import Workbook, load_workbook
 from openpyxl_templates.exceptions import OpenpyxlTemplateException
 from openpyxl_templates.styles import DefaultStyleSet, StyleSet
 from openpyxl_templates.templated_sheet import TemplatedWorksheet
-from openpyxl_templates.utils import OrderedType
+from openpyxl_templates.utils import OrderedType, Typed
 
 
 class SheetnamesNotUnique(OpenpyxlTemplateException):
@@ -24,7 +24,7 @@ class MultipleActiveSheets(OpenpyxlTemplateException):
 class TemplatedWorkbook(with_metaclass(OrderedType)):  # type: ignore
     item_class = TemplatedWorksheet
     template_styles: StyleSet
-    timestamp: bool | str = False
+    timestamp = Typed("timestamp", expected_types=(str, bool), value=False)
     _default_timestamp: str = "%Y%m%d_%H%M%S"
     _file_extension: str = "xlsx"
     workbook: Workbook
