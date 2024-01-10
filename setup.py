@@ -15,7 +15,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='openpyxl-templates310',
-    version='0.2.8',
+    version='0.2.9',
     description='Openpyxl-templates is an extention to openpyxl which simplifies reading '
                 'and writing excelfiles by formalizing their structure into templates.',
     long_description=io.open('README.rst', encoding='utf-8').read(),
